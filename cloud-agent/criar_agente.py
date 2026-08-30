@@ -74,7 +74,7 @@ def api_request(
 
 
 def wait_for_run(api_key: str, agent_id: str, run_id: str) -> dict:
-    terminal = {"COMPLETED", "FAILED", "CANCELLED", "ERROR"}
+    terminal = {"COMPLETED", "FAILED", "CANCELLED", "ERROR", "FINISHED"}
     elapsed = 0
 
     while elapsed < MAX_WAIT_SEC:
@@ -139,7 +139,8 @@ def main() -> None:
     if final_run.get("result"):
         print()
         print("Resposta do agente:")
-        print(final_run["result"][:2000])
+        text = str(final_run["result"])[:2000]
+        sys.stdout.buffer.write((text + "\n").encode("utf-8", errors="replace"))
 
 
 if __name__ == "__main__":
