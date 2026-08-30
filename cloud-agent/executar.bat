@@ -1,6 +1,7 @@
 @echo off
 setlocal
 cd /d "%~dp0.."
+set "PATH=%ProgramFiles%\Git\bin;%ProgramFiles%\GitHub CLI;%PATH%"
 
 title Cursor Cloud Agent
 
