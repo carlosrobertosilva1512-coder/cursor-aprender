@@ -5,8 +5,8 @@ cd /d "%~dp0.."
 title Cursor Cloud Agent
 
 if not exist .env (
-  echo Primeira execucao: configurando...
-  powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0configurar.ps1"
+  echo Primeira execucao: finalizando configuracao...
+  powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0finalizar-configuracao.ps1"
   if errorlevel 1 exit /b 1
 )
 
