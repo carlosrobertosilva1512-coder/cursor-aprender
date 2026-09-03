@@ -1,18 +1,19 @@
 # Conversor PDF para Word (OCR)
 
-Converte PDFs escaneados em documentos Word (`.docx`) editáveis, usando OCR (reconhecimento óptico de caracteres) para extrair o texto. Funciona com documentos em português e inglês.
+Converte PDFs escaneados em documentos Word (`.docx`) editáveis, usando OCR para extrair o texto. Suporta português e inglês.
 
 ## Pré-requisitos
 
 - **Python 3.10** ou superior
-- **Tesseract OCR** instalado
-  - No Windows, o script usa `C:\Program Files\Tesseract-OCR\tesseract.exe`
-- Modelos de idioma `por` e `eng` (já inclusos na pasta `tessdata/`)
+- **Tesseract OCR** instalado no sistema
+  - Windows: [instalador oficial](https://github.com/UB-Mannheim/tesseract/wiki) (o script usa `C:\Program Files\Tesseract-OCR\tesseract.exe`)
+  - Linux: `sudo apt install tesseract-ocr tesseract-ocr-por tesseract-ocr-eng`
+  - macOS: `brew install tesseract`
 
 ## Como instalar as dependências
 
 ```bash
-pip install pypdfium2 pytesseract python-docx Pillow
+pip install -r requirements.txt
 ```
 
 ## Como executar
